@@ -6,7 +6,8 @@ module.exports = {
     try {
       const allThoughts = await Thought.find()
         .populate('reactions');
-      res.json(allThoughts);
+      res.status(200).json(allThoughts);
+      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -22,7 +23,8 @@ module.exports = {
         return res.status(404).json({ message: 'No thought with that ID was found' });
       }
 
-      res.json(singleThought);
+      res.status(200).json(singleThought);
+      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -43,7 +45,8 @@ module.exports = {
       if (!updateUser) {
         return res.status(400).json(err)
       }
-      res.json(updateUser);
+      res.status(200).json(updateUser);
+      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -61,7 +64,8 @@ module.exports = {
       if (!updateThought) {
         return res.status(404).json(err);
       }
-      res.json(updateThought);
+      res.status(200).json(updateThought);
+      console.log('Success')
     } catch (err) {
       res.status(500).json(err)
     }
@@ -70,8 +74,7 @@ module.exports = {
   async deleteThought(req, res) {
     try {
       const deleteThought = await Thought.findOneAndDelete(
-        { _id: req.params.thoughtId }
-        )
+        { _id: req.params.thoughtId })
 
         .populate('thoughts')
         .populate('friends')
@@ -80,7 +83,8 @@ module.exports = {
         return res.status(404).json(err);
       }
 
-      res.json(deleteThought);
+      res.status(200).json(deleteThought);
+      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -99,7 +103,8 @@ module.exports = {
         return res.status(400).json(err);
       }
 
-      res.json(createReaction);
+      res.status(200).json(createReaction);
+      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -117,7 +122,8 @@ module.exports = {
         return res.status(404).json(err);
       }
 
-      res.json(deleteReaction);
+      res.status(200).json(deleteReaction);
+      console.log('Success')
     } catch (err) {
       res.status(500).json(err)
     }
