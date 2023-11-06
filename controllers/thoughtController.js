@@ -7,7 +7,6 @@ module.exports = {
       const allThoughts = await Thought.find()
         .populate('reactions');
       res.status(200).json(allThoughts);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -24,7 +23,6 @@ module.exports = {
       }
 
       res.status(200).json(singleThought);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -46,7 +44,6 @@ module.exports = {
         return res.status(400).json(err)
       }
       res.status(200).json(updateUser);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -65,7 +62,6 @@ module.exports = {
         return res.status(404).json(err);
       }
       res.status(200).json(updateThought);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err)
     }
@@ -84,7 +80,6 @@ module.exports = {
       }
 
       res.status(200).json(deleteThought);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -104,7 +99,6 @@ module.exports = {
       }
 
       res.status(200).json(createReaction);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -123,7 +117,6 @@ module.exports = {
       }
 
       res.status(200).json(deleteReaction);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err)
     }

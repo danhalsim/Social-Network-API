@@ -9,7 +9,6 @@ module.exports = {
         .populate('friends');
 
       res.status(200).json(allUsers);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -27,7 +26,6 @@ module.exports = {
       }
 
       res.status(200).json(singleUser);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -41,7 +39,6 @@ module.exports = {
       });
 
       res.status(200).json(createUser);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -62,7 +59,6 @@ module.exports = {
       }
 
       res.status(200).json(updateUser);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -78,7 +74,6 @@ module.exports = {
       }
 
       res.status(200).json(deleteUser);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err);
     }
@@ -99,7 +94,6 @@ module.exports = {
         return res.status(404).json(err);
       }
       res.status(200).json(addFriend);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err)
     }
@@ -119,7 +113,6 @@ module.exports = {
         return res.status(404).json(err);
       }
       res.status(200).json(removeFriend);
-      console.log('Success')
     } catch (err) {
       res.status(500).json(err)
     }
