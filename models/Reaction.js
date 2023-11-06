@@ -6,20 +6,25 @@ const reactionSchema = new Schema(
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
+
     reactionBody: {
       type: String,
       required: true,
-      max: [280, 'Uh-oh, too many characters!'],
+      max: 280,
     },
+
     username: {
       type: String,
       required: true,
     },
+
     createdAt: {
       type: Date,
       default: Date.now,
     }
+
   },
+  
   {
     toJSON: {
       // virtuals:true,
